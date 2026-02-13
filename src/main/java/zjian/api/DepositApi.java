@@ -47,12 +47,12 @@ public class DepositApi {
         return executor.execute("/api/v3/action.deposit.pay.refund", req, DepositPayRefundResponse.class, "储值付款冲正");
     }
 
-    /** 获取储值流水列表 (对应原方法 deposit) */
+    /** 获取储值流水列表  */
     public DepositRecordListResponse getRecords(DepositRecordListRequest req) {
         return executor.execute("/api/v3/zjian.crm.pay.deposit.get", req, DepositRecordListResponse.class, "获取储值流水列表");
     }
 
-    /** 查询储值支付订单状态 (对应原方法 trade) */
+    /** 查询储值支付订单状态  */
     public DepositTradeStatusResponse getTradeStatus(DepositTradeStatusRequest req) {
         return executor.execute("/api/v3/action.deposit.pay.trade.status", req, DepositTradeStatusResponse.class, "查询储值支付订单状态");
     }

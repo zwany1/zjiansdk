@@ -45,7 +45,6 @@ public class InternalRequestExecutor {
             );
             String sign = SignUtil.encryptHmacString(signSource, config.getClientSecret());
 
-            //  构造请求
             RequestBody body = RequestBody.create(jsonParams, MediaType.parse("application/json"));
             Request request = new Request.Builder()
                     .url(url)
@@ -58,7 +57,6 @@ public class InternalRequestExecutor {
                     .addHeader("sign", sign)
                     .build();
 
-            //  发送请求
             if (log.isDebugEnabled()) {
                 log.debug("SDK Request: URL={}, Body={}", url, jsonParams);
             }
@@ -70,7 +68,6 @@ public class InternalRequestExecutor {
 
                 String responseBody = response.body().string();
                 
-                //   {code, desc, data}
                 JSONObject jsonObject = JSON.parseObject(responseBody);
                 String code = jsonObject.getString("code");
                 
@@ -81,10 +78,8 @@ public class InternalRequestExecutor {
 
                 if (responseClass == Void.class) return null;
 
-                // 解析 data
                 T data = jsonObject.getObject("data", responseClass);
 
-                //业务 Success 校验
                 checkBusinessSuccess(data, apiDesc);
 
                 return data;
@@ -99,7 +94,7 @@ public class InternalRequestExecutor {
     }
 
     /**
-     * 检查业务层的 success 字段
+     * 检查 success
      *
      */
     private void checkBusinessSuccess(Object data, String apiDesc) {

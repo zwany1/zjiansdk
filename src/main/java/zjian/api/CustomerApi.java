@@ -28,7 +28,7 @@ public class CustomerApi {
         return executor.execute("/api/v3/zjian.crm.customers.post", req, ApiResponse.ResponseData.class, "批量导入会员");
     }
 
-    /** 更新会员信息 (原接口返回 void，此处兼容) */
+    /** 更新会员信息  */
     public void updateCustomer(CustomerUpdateRequest req) {
         executor.execute("/api/v3/zjian.crm.customer.update.post", req, Void.class, "更新会员信息");
     }

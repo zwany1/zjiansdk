@@ -19,7 +19,7 @@ public class PointChangeRequest {
     @Schema(description = "类型[1:增加, 2:使用]", required = true)
     private Integer type;
 
-    @Schema(description = "\t业态(2:门票，2：消费券，2：年卡，1：酒店，3：餐食，3：酒店餐饮，3：乐园餐饮，0：套餐，4：商亭，4：零售，5：储物柜，6：乐园停车场,6：酒店停车场。)", required = true)
+    @Schema(description = "业态(2:门票，2：消费券，2：年卡，1：酒店，3：餐食，3：酒店餐饮，3：乐园餐饮，0：套餐，4：商亭，4：零售，5：储物柜，6：乐园停车场,6：酒店停车场。)", required = true)
     private Integer businessForms;
 
     @Schema(description = "来源流水: 27:积分支付, 28:积分抵现", required = true)
