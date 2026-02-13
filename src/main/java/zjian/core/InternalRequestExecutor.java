@@ -66,8 +66,11 @@ public class InternalRequestExecutor {
                     throw new CrmSdkException("HTTP Error: " + response.code());
                 }
 
-                String responseBody = response.body().string();
-                
+                String responseBody = null;
+                if (response.body() != null) {
+                    responseBody = response.body().string();
+                }
+
                 JSONObject jsonObject = JSON.parseObject(responseBody);
                 String code = jsonObject.getString("code");
                 
