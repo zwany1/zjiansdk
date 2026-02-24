@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class CrmSdkConfig {
-    /** 接口网关地址 ( http://118.178.230.10) */
+    /** 接口地址 ( http://118.178.230.10) */
     private String host;
     
     /** ( 1001) */

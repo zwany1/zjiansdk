@@ -38,7 +38,7 @@ public class InternalRequestExecutor {
         String url = config.getHost() + apiPath;
 
         try {
-            //  签名计算
+            //  签名
             String signSource = SignUtil.splicingUrl(
                     config.getClientId(), config.getClientCode(), config.getTenId(),
                     config.getAccessToken(), timestamp, jsonParams
@@ -58,12 +58,12 @@ public class InternalRequestExecutor {
                     .build();
 
             if (log.isDebugEnabled()) {
-                log.debug("SDK Request: URL={}, Body={}", url, jsonParams);
+                log.debug(" Request: URL={}, Body={}", url, jsonParams);
             }
             
             try (Response response = httpClient.newCall(request).execute()) {
                 if (!response.isSuccessful()) {
-                    throw new CrmSdkException("HTTP Error: " + response.code());
+                    throw new CrmSdkException(" Error: " + response.code());
                 }
 
                 String responseBody = null;
