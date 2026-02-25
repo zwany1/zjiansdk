@@ -14,12 +14,16 @@ public class ProductApi {
         this.executor = executor;
     }
 
-    /** 同步商品SKU */
+    /**
+     * 同步商品SKU
+     */
     public ProductSkuSyncResponse syncSku(ProductSkuSyncRequest req) {
         return executor.execute("/api/v3/zjian.crm.sku.post", req, ProductSkuSyncResponse.class, "同步商品SKU");
     }
 
-    /** 同步商品SKU套餐 */
+    /**
+     * 同步商品SKU套餐
+     */
     public ProductPackageSyncResponse syncPackage(ProductPackageSyncRequest req) {
         return executor.execute("/api/v3/zjian.crm.sku.package.post", req, ProductPackageSyncResponse.class, "同步商品SKU套餐");
     }

@@ -27,7 +27,7 @@ public class ZjianCrmClient {
      * 配置对象初始化 SDK
      *
      */
-    public ZjianCrmClient(CrmSdkConfig config, VehicleManagementApi vehicleManagementApi) {
+    public ZjianCrmClient(CrmSdkConfig config) {
         InternalRequestExecutor executor = new InternalRequestExecutor(config);
         
         // 2. 实例化各个业务模块
