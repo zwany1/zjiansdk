@@ -3,8 +3,12 @@ package zjian.api;
 import zjian.core.InternalRequestExecutor;
 import zjian.dto.req.BindVehicleRequest;
 import zjian.dto.req.QueryCustomerVehicle;
+import zjian.dto.req.VehicleQueryCustomerRequest;
+import zjian.dto.req.VehicleTradeImportRequest;
 import zjian.dto.res.BindVehicleResponse;
 import zjian.dto.res.QueryCustomerVehicleVo;
+import zjian.dto.res.VehicleQueryResponse;
+import zjian.dto.res.VehicleTradeResponse;
 
 public class VehicleManagementApi {
     private final InternalRequestExecutor executor;
@@ -25,5 +29,18 @@ public class VehicleManagementApi {
      */
     public QueryCustomerVehicleVo getCustomerVehicles(QueryCustomerVehicle req) {
         return executor.execute("/api/v3/zjian.crm.customer.vehicle.get", req, QueryCustomerVehicleVo.class, "查询会员车牌");
+    }
+
+    /**
+     * 通过车牌号查询会员信息
+     */
+    public VehicleQueryResponse queryCustomerByVehicle(VehicleQueryCustomerRequest req) {
+        return executor.execute("/api/v3/zjian.crm.customer.vehicle.query", req, VehicleQueryResponse.class, "通过车牌号查询会员");
+    }
+    /**
+     * 导入停车出入场记录
+     */
+    public VehicleTradeResponse importVehicleTrade(VehicleTradeImportRequest req) {
+        return executor.execute("/api/v3/zjian.crm.customer.vehicle.trade", req, VehicleTradeResponse.class, "导入停车记录");
     }
 }

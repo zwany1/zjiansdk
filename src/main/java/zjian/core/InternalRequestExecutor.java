@@ -80,7 +80,7 @@ public class InternalRequestExecutor {
                 }
 
                 if (responseClass == Void.class) return null;
-
+    
                 T data = jsonObject.getObject("data", responseClass);
 
                 checkBusinessSuccess(data, apiDesc);
