@@ -5,7 +5,6 @@ import lombok.Data;
 
 /** 导入停车出入场记录请求参数 */
 @Data
-@Builder
 public class VehicleTradeImportRequest {
     /** 入场车牌号 (必填) */
     private String vehicle_no;

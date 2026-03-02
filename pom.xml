@@ -105,4 +105,25 @@
             </plugin>
         </plugins>
     </build>
+    <!-- 分发管理 -->
+
+    <distributionManagement>
+
+        <repository>
+
+            <id>rdc-releases</id>
+
+            <name>Release Repository</name>
+
+        </repository>
+
+        <snapshotRepository>
+
+            <id>rdc-snapshots</id>
+
+            <name>Snapshot Repository</name>
+
+        </snapshotRepository>
+
+    </distributionManagement>
 </project>

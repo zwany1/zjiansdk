@@ -1,14 +1,8 @@
 package zjian.api;
 
 import zjian.core.InternalRequestExecutor;
-import zjian.dto.req.BindVehicleRequest;
-import zjian.dto.req.QueryCustomerVehicle;
-import zjian.dto.req.VehicleQueryCustomerRequest;
-import zjian.dto.req.VehicleTradeImportRequest;
-import zjian.dto.res.BindVehicleResponse;
-import zjian.dto.res.QueryCustomerVehicleVo;
-import zjian.dto.res.VehicleQueryResponse;
-import zjian.dto.res.VehicleTradeResponse;
+import zjian.dto.req.*;
+import zjian.dto.res.*;
 
 public class VehicleManagementApi {
     private final InternalRequestExecutor executor;
@@ -27,8 +21,8 @@ public class VehicleManagementApi {
     /**
      * 会员拥有车牌
      */
-    public QueryCustomerVehicleVo getCustomerVehicles(QueryCustomerVehicle req) {
-        return executor.execute("/api/v3/zjian.crm.customer.vehicle.get", req, QueryCustomerVehicleVo.class, "查询会员车牌");
+    public QueryCustomerVehicleResponse getCustomerVehicles(QueryCustomerVehicle req) {
+        return executor.execute("/api/v3/zjian.crm.customer.vehicle.get", req, QueryCustomerVehicleResponse.class, "查询会员车牌");
     }
 
     /**
@@ -43,4 +37,11 @@ public class VehicleManagementApi {
     public VehicleTradeResponse importVehicleTrade(VehicleTradeImportRequest req) {
         return executor.execute("/api/v3/zjian.crm.customer.vehicle.trade", req, VehicleTradeResponse.class, "导入停车记录");
     }
+        /**
+         * 车辆解绑：将客户与指定车牌解绑
+         */
+        public UnbindCustomerVehicleResponse unbindVehicle(UnbindCustomerVehicleParams req) {
+            return executor.execute("/api/v3/zjian.crm.customer.vehicle.unbind", req, UnbindCustomerVehicleResponse.class, "车辆解绑");
+        }
+
 }

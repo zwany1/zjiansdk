@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Schema(description = "优惠券核销请求参数")
 public class CouponUseRequest {
 

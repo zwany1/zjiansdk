@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
  * 会员券列表查询请求
  */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class QueryRequest {
     @Schema( description = "手机号")
     private String mobile;

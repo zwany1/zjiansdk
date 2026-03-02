@@ -6,7 +6,7 @@ import java.util.List;
 
 /** 查询会员车牌返回数据 */
 @Data
-public class QueryCustomerVehicleVo extends BaseCrmResponse{
+public class QueryCustomerVehicleResponse extends BaseCrmResponse{
     private List<BasCustomerVehicleVo> customerVehicleList;
 
 
