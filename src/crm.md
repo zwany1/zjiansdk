@@ -1,12 +1,13 @@
 1.引入如下依赖：
-
+```xml
 <dependency>
 <groupId>com.zjian.crm</groupId>
 <artifactId>zjian-crm-sdk</artifactId>
 <version>1.0.0</version>
 </dependency>
-
+```
 2.配置
+```java
 package zwy.member.client;
 
 import org.springframework.context.annotation.Bean;
@@ -19,7 +20,7 @@ public class ZjianSdkConfig {
 
     @Bean
     public ZjianCrmClient zjianCrmClient() {
-        // 1. 初始化配置参数
+        // 初始化配置参数
         CrmSdkConfig config = CrmSdkConfig.builder()
                 .host("http://118.178.230.10")
                 .clientId("1001")
@@ -28,14 +29,14 @@ public class ZjianSdkConfig {
                 .accessToken("2CD5D8955335CD233646E3BD1962AE45")
                 .clientSecret("019c29483dfaaac8e6ec176c8075aa3d")
                 .build();
-
         return new ZjianCrmClient(config);
     }
 }
+```
 
 3.使用如
+```java
 package zwy.member.config;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,3 +59,4 @@ public class VehicleService {
         CustomerInfoResponse response = crmClient.customer().getCustomerInfo(params);
     }
 }
+```
