@@ -30,8 +30,7 @@ public class InternalRequestExecutor {
 
     public <T> T execute(String apiPath, Object requestParams, Class<T> responseClass, String apiDesc) {
         // 转下划线 Map
-        Map<String, Object> bodyMap = requestParams instanceof Map ? 
-            (Map<String, Object>) requestParams : SnakeCaseUtil.toSnakeMap(requestParams);
+        Map<String, Object> bodyMap = requestParams instanceof Map ? (Map<String, Object>) requestParams : SnakeCaseUtil.toSnakeMap(requestParams);
         
         String jsonParams = JSON.toJSONString(bodyMap);
         String timestamp = String.valueOf(System.currentTimeMillis());

@@ -23,6 +23,8 @@ public class ZjianCrmClient {
     @Getter
     private final VehicleManagementApi vehicleManagementApi;
 
+    @Getter
+    private final PostApi post;
     /**
      * 配置对象初始化 SDK
      *
@@ -36,6 +38,7 @@ public class ZjianCrmClient {
         this.deposit = new DepositApi(executor);
         this.product = new ProductApi(executor);
         this.vehicleManagementApi = new VehicleManagementApi(executor);
+        this.post = new PostApi(executor);
 
     }
 

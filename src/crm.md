@@ -1,4 +1,4 @@
-1.引入如下依赖：
+1.引入依赖
 ```xml
 <dependency>
 <groupId>com.zjian.crm</groupId>
@@ -34,7 +34,7 @@ public class ZjianSdkConfig {
 }
 ```
 
-3.使用如
+3.使用
 ```java
 package zwy.member.config;
 import lombok.extern.slf4j.Slf4j;
