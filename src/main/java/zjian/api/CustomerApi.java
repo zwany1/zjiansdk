@@ -35,8 +35,8 @@ public class CustomerApi {
     /**
      * 更新会员信息
      */
-    public void updateCustomer(CustomerUpdateRequest req) {
-        executor.execute("/api/v3/zjian.crm.customer.update.post", req, Void.class, "更新会员信息");
+    public CustomerUpdateRes updateCustomer(CustomerUpdateRequest req) {
+       return executor.execute("/api/v3/zjian.crm.customer.update.post", req, CustomerUpdateRes.class, "更新会员信息");
     }
 
     /**
