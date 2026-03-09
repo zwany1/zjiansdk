@@ -10,7 +10,7 @@ public class CustomerUpdateRequest {
     private String mobile;
     
     @Schema(description = "会员编号（二选一必填）")
-    private String customer_no;
+    private String customerNo;
     
     @Schema(description = "性别[0:未知,1:男,2:女]")
     private String gender;
@@ -19,7 +19,7 @@ public class CustomerUpdateRequest {
     private String birthday;
     
     @Schema(description = "会员名称")
-    private String customer_name;
+    private String customerName;
 
     @Schema(description = "会员昵称")
     private String nickname;
@@ -30,10 +30,10 @@ public class CustomerUpdateRequest {
     private String email;
     
     @Schema(description = "证件类型")
-    private Integer id_type;
+    private Integer idType;
     
     @Schema(description = "证件编号")
-    private String id_number;
+    private String idNumber;
 
     @Data
     public static class AvatarDTO {
